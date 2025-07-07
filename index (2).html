@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inflammation Definition</title>
+  <style>
+    body {
+      background-color:aliceblue;
+      color: #222;
+      font-family: 'Times New Roman', Times, serif ;
+      font-size: 24px;
+      padding: 40px;
+    }
+
+    #text {
+      white-space: pre-line;
+      border-left: 4px solid brown;
+      padding-left: 15px;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      background-color: #222;
+      animation: blink 1s steps(2, start) infinite;
+    }
+
+    @keyframes blink {
+      to {
+        background: transparent;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="text"></div><span class="cursor"></span>
+
+  <script>
+    const definition = `🩸 Inflammation
+
+Inflammation is your body's natural defense response to injury, infection, or harmful stimuli.
+
+It involves redness, swelling, heat, pain, and sometimes loss of function.
+
+It's your immune system’s way of saying: “Something's wrong—let's fix it!”
+
+incase you have question dont fail to ask your doctor ,and for more Health tips please follow😊`;
+
+
+
+    let i = 0;
+    const speed = 40; // typing speed in ms
+
+    function typeWriter() {
+      if (i < definition.length) {
+        document.getElementById("text").innerHTML += definition.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    typeWriter();
+  </script>
+</body>
+</html>
